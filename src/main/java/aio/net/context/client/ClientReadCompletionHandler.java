@@ -42,7 +42,7 @@ public class ClientReadCompletionHandler implements CompletionHandler<Integer, O
                 buffer.clear();
 
                 if("连接成功".equals(msg)){
-                    LOGGER.info("-------- 现在已经可以想客户端发送消息了,请在控制台输入要发送的消息,然后 Enter !");
+                    LOGGER.info("-------- 现在已经可以想服务端发送消息了,请在控制台输入要发送的消息,然后 Enter !");
                 }
 
                 if("exit".equals(msg)){
