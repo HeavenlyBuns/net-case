@@ -71,7 +71,7 @@ public class AcceptCompletionHandler implements CompletionHandler<AsynchronousSo
     public void receiptAccept(AsynchronousSocketChannel socket) throws ExecutionException, InterruptedException, IOException {
         Future<Integer> write = socket.write(ByteBuffer.wrap("连接成功".getBytes()));
         Integer receiptSize = write.get();
-        LOGGER.info("客户端请求握手成功,address = {} ,回执数据 ({}) 条!",socket.getRemoteAddress(),receiptSize);
+        LOGGER.info("客户端请求握手成功,address = {} ,回执数据Size = ({}) !",socket.getRemoteAddress(),receiptSize);
     }
 
     public void startWrite(AsynchronousSocketChannel channel){

@@ -41,6 +41,10 @@ public class ClientReadCompletionHandler implements CompletionHandler<Integer, O
                 //在读取完后,必须得清除,如果不清除buffer,那么就会相当于在执行一次read,导致下一次执行读取不到数据
                 buffer.clear();
 
+                if("连接成功".equals(msg)){
+                    LOGGER.info("-------- 现在已经可以想客户端发送消息了,请在控制台输入要发送的消息,然后 Enter !");
+                }
+
                 if("exit".equals(msg)){
                     client.close();
 

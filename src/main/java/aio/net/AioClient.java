@@ -51,7 +51,6 @@ public class AioClient {
         new Thread(() -> {
             BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
             try {
-
                 while (true) {
                     String s = reader.readLine();
                     if (!"".equals(s)) {
