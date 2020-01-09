@@ -1,6 +1,7 @@
 package aio.net;
 
 import aio.net.context.client.ClientReadCompletionHandler;
+import aio.net.task.AioThreadFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -35,7 +36,7 @@ public class AioClient {
 
     public AioClient() {
         try {
-            executor = (ThreadPoolExecutor) Executors.newCachedThreadPool();
+            executor = (ThreadPoolExecutor) Executors.newCachedThreadPool(AioThreadFactory.getInstance("Aio-Client-ThreadPool", false));
             group = AsynchronousChannelGroup.withThreadPool(executor);
             client = AsynchronousSocketChannel.open(group);
             client.bind(bindAddress);
