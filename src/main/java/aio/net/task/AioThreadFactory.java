@@ -47,7 +47,7 @@ public class AioThreadFactory implements ThreadFactory {
     @Override
     public Thread newThread(Runnable r) {
         Thread thread = new Thread(r);
-        thread.setName(poolName + "-" + atomicMap.get(poolName));
+        thread.setName(poolName + "-" + atomicMap.get(poolName).incrementAndGet());
         thread.setPriority(priority);
         thread.setDaemon(deamon);
         return thread;

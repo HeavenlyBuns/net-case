@@ -27,7 +27,7 @@ public class AioClient {
     private final static Logger LOGGER = LoggerFactory.getLogger(AioClient.class);
 
     private final static int port = 9000;
-    private final static int bindPort = 9001;
+    private final static int bindPort = 9002;
     AsynchronousChannelGroup group = null;
     AsynchronousSocketChannel client = null;
     ThreadPoolExecutor executor = null;

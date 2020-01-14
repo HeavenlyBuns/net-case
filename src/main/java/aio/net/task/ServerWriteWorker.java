@@ -43,7 +43,7 @@ public class ServerWriteWorker implements Runnable{
                 writeBuffer.put(Charset.defaultCharset().encode(line));
                 writeBuffer.flip();
                 client.write(writeBuffer,writeBuffer,new ServerWriteHandler());
-                LOGGER.info("服务器已经向客户端({})发送数据: {}",client.getRemoteAddress(),line);
+                LOGGER.info("服务器已经向客户端({})发送数据: {},客户端状态: {} ",client.getRemoteAddress(),line,client.isOpen());
 
             } catch (IOException e) {
                 e.printStackTrace();
